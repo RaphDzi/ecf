@@ -19,7 +19,7 @@ class ReservationFactory extends Factory
     public function definition(): array
     {
         return [
-            'date_reservation' => fake()->sentence(),
+            'date_reservation' => fake()->date(),
             'utilisateur_id' => Utilisateur::factory(),
             'creneau_id' => Creneau::factory(),
         ];

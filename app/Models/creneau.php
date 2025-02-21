@@ -19,6 +19,6 @@ class Creneau extends Model
     //un creneau est attribué à une ou plusieurs reservations
     public function reservations()
     {
-        return $this->belongsToMany(Creneau::class);
+        return $this->belongsToMany(Reservation::class);
     }
 }

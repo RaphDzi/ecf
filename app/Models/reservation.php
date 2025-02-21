@@ -11,15 +11,13 @@ class Reservation extends Model
     use HasFactory;
 
 
-    //une reservation est attribué à un seul user
     public function utilisateurs()
     {
-        return $this->belongsTo(Utilisateur::class);
+        return $this->belongsTo(Utilisateur::class, 'utilisateur_id');
     }
 
-    //une reservation est attribué à un seul creneau
-    public function reservations()
+    public function creneaux()
     {
-        return $this->belongsTo(Reservation::class);
+        return $this->belongsTo(Creneau::class, 'creneau_id');
     }
 }
