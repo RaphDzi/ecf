@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reservations', function (Blueprint $table) {
+        Schema::create('creneaus', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('date_reservation');
-            $table->foreignIdFor(App\Models\User::class, 'id_utilisateur')->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(\App\Models\creneau::class, 'id_creneau')->constrained()->cascadeOnDelete();
+            $table->integer('places');
+            $table->dateTime('date_heure');
+            $table->foreignIdFor(App\Models\Cours::class, 'cours_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reservations');
+        Schema::dropIfExists('creneaus');
     }
 };

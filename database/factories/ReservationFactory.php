@@ -2,13 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\creneau;
-use App\Models\User;
-use App\Models\reservation;
+use App\Models\Creneau;
+use App\Models\Utilisateur;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\reservation>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Reservation>
  */
 class ReservationFactory extends Factory
 {
@@ -20,10 +19,9 @@ class ReservationFactory extends Factory
     public function definition(): array
     {
         return [
-            'places' => fake()->word(),
             'date_reservation' => fake()->sentence(),
-            'id_utilisateur' => User::factory(),
-            'id_creneau' => creneau::factory(),
+            'utilisateur_id' => Utilisateur::factory(),
+            'creneau_id' => Creneau::factory(),
         ];
     }
 }

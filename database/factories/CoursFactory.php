@@ -2,13 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\Cours;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Creneau>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Cours>
  */
-class CreneauFactory extends Factory
+class CoursFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,9 +17,8 @@ class CreneauFactory extends Factory
     public function definition(): array
     {
         return [
-            'places' => fake()->word(),
-            'date_heure' => fake()->sentence(),
-            'cours_id' => Cours::factory(),
+            'nom' => fake()->word(),
+            'description' => fake()->sentence(),
         ];
     }
 }

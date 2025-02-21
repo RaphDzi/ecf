@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('creneaus', function (Blueprint $table) {
+        Schema::create('utilisateurs', function (Blueprint $table) {
             $table->id();
-            $table->integer('places');
-            $table->dateTime('daate_heure');
-            $table->foreignIdFor(App\Models\Cour::class, 'id_cours')->constrained()->cascadeOnDelete();
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('adresse');
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('creneaus');
+        Schema::dropIfExists('utilisateurs');
     }
 };

@@ -3,12 +3,11 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\cour;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\cour>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Utilisateur>
  */
-class CourFactory extends Factory
+class UtilisateurFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,8 +17,9 @@ class CourFactory extends Factory
     public function definition(): array
     {
         return [
-            'nom' => fake()->word(),
-            'description' => fake()->sentence(),
+            'nom' => fake()->name(),
+            'prenom' => fake()->name(),
+            'adresse' => fake()->sentence()
         ];
     }
 }
