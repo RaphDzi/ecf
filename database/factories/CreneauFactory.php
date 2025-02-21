@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\cour;
+use App\Models\creneau;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

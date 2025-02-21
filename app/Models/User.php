@@ -45,4 +45,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    //un user fait une ou plusieurs reservations
+    public function reservations()
+    {
+        return $this->belongsToMany(Creneau::class);
+    }
 }

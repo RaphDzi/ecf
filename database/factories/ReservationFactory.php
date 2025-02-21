@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\creneau;
 use App\Models\User;
+use App\Models\reservation;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

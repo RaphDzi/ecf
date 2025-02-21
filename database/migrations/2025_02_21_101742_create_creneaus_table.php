@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('places');
             $table->dateTime('daate_heure');
             $table->foreignIdFor(App\Models\Cour::class, 'id_cours')->constrained()->cascadeOnDelete();
+            $table->timestamps();
         });
     }
 

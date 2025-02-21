@@ -16,6 +16,7 @@ return new class extends Migration
             $table->dateTime('date_reservation');
             $table->foreignIdFor(App\Models\User::class, 'id_utilisateur')->constrained()->cascadeOnDelete();
             $table->foreignIdFor(\App\Models\creneau::class, 'id_creneau')->constrained()->cascadeOnDelete();
+            $table->timestamps();
         });
     }
 
