@@ -11,7 +11,7 @@ class CoursController extends Controller
 
 
     public function index() {
-        $cours = Cours::latest()->paginate(3); // Récupère les cours avec pagination
+        $cours = Cours::latest()->paginate(7); // Récupère les cours avec pagination
         return view('cours.index', ['cours' => $cours]);
     }
 
@@ -66,13 +66,11 @@ class CoursController extends Controller
     }
 
 
+    public function destroy(Cours $cours)
+    {
 
-
-
-
-
-    public function destroy(Cours $cours) {
         $cours->delete();
-        return redirect('/cours')->with('success', 'Cours supprimé avec succès !');
+
+        return redirect()->route('cours.index')->with('success', 'Cours supprimé avec succès!');
     }
 }

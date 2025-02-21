@@ -27,13 +27,12 @@
         <div class="mt-6 flex items-center justify-end gap-x-6">
 
             <button form="delete-form" class="text-red-500 text-sm font-bold">Delete</button>
-            <a class="text-sm/6 font-semibold text-gray-900" href="/cours/{{$cours->id}}">Cancel</a>
+            <a class="text-sm/6 font-semibold text-gray-900" href="{{ route('cours.index') }}">Cancel</a>
             <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
         </div>
     </form>
-    <form method="POST" action="/cours/{{$cours->id}}" id="delete-form" class="hidden">
+    <form method="POST" action="{{ route('cours.destroy', $cours->id) }}" id="delete-form" class="hidden">
         @csrf
         @method('DELETE')
-    </form>
     </form>
 </div>
